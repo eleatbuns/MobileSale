@@ -4,10 +4,21 @@ server:
     context-path: /sale
 spring:
   datasource:
+    type: com.mchange.v2.c3p0.ComboPooledDataSource
+    jdbcUrl: jdbc:mysql://localhost:3306/mobile_sale
     name: MobileSale database
-    driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/mobile_sale
-    username: root
+    user: root
     password: 123456
+    driverClass: com.mysql.jdbc.Driver
+    acquireIncrement: 11
+
 mybatis:
   mapper-locations: classpath:mapping/*.xml
+  type-aliases-package: com.sdu.mobilesale.model
+
+#pagehelper分页插件
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql

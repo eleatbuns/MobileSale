@@ -11,9 +11,8 @@ import java.util.Map;
 public class LoginController {
 
     @PostMapping("/login")
-    public Map<String, String> test(@RequestParam(value = "name") String name){
+    public Map<String, String> test(@RequestParam(value = "useraccount") String useraccount,@RequestParam(value = "password") String password){
         Map<String,String> returnMap = new HashMap<>();
-        returnMap.put("name","get Your Name is "+name);
         return returnMap;
     }
 }
