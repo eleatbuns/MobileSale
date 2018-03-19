@@ -1,6 +1,5 @@
 package com.sdu.mobilesale.controller;
 
-import com.sdu.mobilesale.mapper.SellerStaffMapper;
 import com.sdu.mobilesale.service.SellerStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
