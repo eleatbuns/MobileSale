@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdu.mobilesale.mapper.SellerStaffMapper">
+  <resultMap id="BaseResultMap" type="com.sdu.mobilesale.model.SellerStaff">
+    <id column="seller_id" jdbcType="INTEGER" property="sellerId" />
+    <result column="seller_account" jdbcType="VARCHAR" property="sellerAccount" />
+    <result column="seller_name" jdbcType="VARCHAR" property="sellerName" />
+    <result column="seller_password" jdbcType="VARCHAR" property="sellerPassword" />
+    <result column="seller_phone" jdbcType="BIGINT" property="sellerPhone" />
+    <result column="area_id" jdbcType="INTEGER" property="areaId" />
+  </resultMap>
+  <select id="loginAuthentication" resultType="java.lang.String" parameterType="java.lang.String">
+    SELECT seller_password
+    FROM seller_staff
+    WHERE seller_account = #{useraccount}
+  </select>
+</mapper>
