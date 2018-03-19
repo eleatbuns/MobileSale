@@ -15,18 +15,18 @@ public class DatasourceConfiguration {
     @Bean(name = "dataSource")
     @Qualifier(value = "dataSource")
     @Primary
-    @ConfigurationProperties(prefix = "spring.datasource")
+    @ConfigurationProperties(prefix = "c3p0")
     public DataSource dataSource() {
         return DataSourceBuilder.create().type(com.mchange.v2.c3p0.ComboPooledDataSource.class).build();
     }
 
-    /**
-     * 返回sqlSessionFactory
-     */
-    @Bean
-    public SqlSessionFactoryBean sqlSessionFactoryBean() {
-        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
-        sqlSessionFactory.setDataSource(dataSource());
-        return sqlSessionFactory;
-    }
+//    /**
+//     * 返回sqlSessionFactory
+//     */
+//    @Bean
+//    public SqlSessionFactoryBean sqlSessionFactoryBean() {
+//        SqlSessionFactoryBean sqlSessionFactory = new SqlSessionFactoryBean();
+//        sqlSessionFactory.setDataSource(dataSource());
+//        return sqlSessionFactory;
+//    }
 }
