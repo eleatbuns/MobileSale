@@ -2,6 +2,7 @@ package com.sdu.mobilesale.controller;
 
 import com.sdu.mobilesale.service.SellerStaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,7 +26,7 @@ public class LoginController {
 
 
     @PostMapping("/login")
-    public Map<String, Integer> test(@RequestParam(value = "useraccount") String useraccount, @RequestParam(value = "password") String password) {
+    public Map<String, Integer> login(@RequestParam(value = "useraccount") String useraccount, @RequestParam(value = "password") String password) {
         Map<String, Integer> result = new HashMap<>();
         String selectPassword = sellerStaffService.verifyPassword(useraccount);
         if (selectPassword == null || selectPassword.equals("")) {
