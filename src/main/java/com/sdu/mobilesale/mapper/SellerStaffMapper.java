@@ -5,6 +5,8 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
+
 @Component(value = "SellerStaff")
 @Mapper
 public interface SellerStaffMapper {
@@ -14,7 +16,7 @@ public interface SellerStaffMapper {
 
     int insertSelective(SellerStaff record);
 
-//    SellerStaff selectByPrimaryKey(Integer sellerId);
+    HashMap selectByAccount(@Param("useraccount")String useraccount);
     String loginAuthentication(@Param("useraccount")String useraccount);
 
     int updateByPrimaryKeySelective(SellerStaff record);

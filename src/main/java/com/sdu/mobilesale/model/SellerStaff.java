@@ -9,9 +9,19 @@ public class SellerStaff {
 
     private String sellerPassword;
 
-    private Long sellerPhone;
+    private String sellerPhone;
 
-    private Integer areaId;
+    private String areaId;
+
+//    private Areas areas;
+//
+//    public Areas getAreas() {
+//        return areas;
+//    }
+//
+//    public void setAreas(Areas areas) {
+//        this.areas = areas;
+//    }
 
     public Integer getSellerId() {
         return sellerId;
@@ -45,19 +55,19 @@ public class SellerStaff {
         this.sellerPassword = sellerPassword == null ? null : sellerPassword.trim();
     }
 
-    public Long getSellerPhone() {
+    public String getSellerPhone() {
         return sellerPhone;
     }
 
-    public void setSellerPhone(Long sellerPhone) {
+    public void setSellerPhone(String sellerPhone) {
         this.sellerPhone = sellerPhone;
     }
 
-    public Integer getAreaId() {
+    public String getAreaId() {
         return areaId;
     }
 
-    public void setAreaId(Integer areaId) {
+    public void setAreaId(String areaId) {
         this.areaId = areaId;
     }
 }
