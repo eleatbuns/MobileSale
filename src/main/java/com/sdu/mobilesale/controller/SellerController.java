@@ -13,17 +13,11 @@ import java.util.HashMap;
 @RequestMapping(path = "/seller")
 public class SellerController {
 
-    private final String RETURNKEY = "result";
-    //Parameter cannot be empty
-    private final int PARAMNULL = 3;
-
     @Autowired
     private SellerStaffService sellerStaffService;
 
     @GetMapping("/Message")
     public HashMap login(@RequestParam(value = "useraccount") String useraccount) {
-        HashMap sellerStaff  = sellerStaffService.getSellerMessage(useraccount);
-//        System.out.println(sellerStaff.toString());
-        return sellerStaff;
+        return sellerStaffService.getSellerMessage(useraccount);
     }
 }

@@ -15,11 +15,18 @@
         <collection property="areas" ofType="com.sdu.mobilesale.model.Areas">
             <id property="id" column="id"/>
             <result property="area" column="area"/>
+            <result property="areaId" column="area_id"/>
         </collection>
         <collection property="cities" ofType="com.sdu.mobilesale.model.Cities">
-            <id property="id" column="id"/>
+            <id property="cityId" column="city_id"/>
             <result property="city" column="city"/>
         </collection>
+        <!--<collection property="customer_info" ofType="com.sdu.mobilesale.model.CustomerInformation">-->
+            <!--<id property="customerId" column="customer_id"/>-->
+            <!--<result property="customerName" column="customer_name"/>-->
+            <!--<result property="customerAddress" column="customer_address"/>-->
+            <!--<result property="customerPhone" column="customer_phone"/>-->
+        <!--</collection>-->
     </resultMap>
     <select id="loginAuthentication" resultType="java.lang.String" parameterType="java.lang.String">
         SELECT seller_password
@@ -31,6 +38,7 @@
             seller_name,
             seller_phone,
             area,
+            area_id,
             city
         FROM seller_staff
             NATURAL JOIN areas,cities

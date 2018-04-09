@@ -13,16 +13,6 @@ public class SellerStaff {
 
     private String areaId;
 
-//    private Areas areas;
-//
-//    public Areas getAreas() {
-//        return areas;
-//    }
-//
-//    public void setAreas(Areas areas) {
-//        this.areas = areas;
-//    }
-
     public Integer getSellerId() {
         return sellerId;
     }
