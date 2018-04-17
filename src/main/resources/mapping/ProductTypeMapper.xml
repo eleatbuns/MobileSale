@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sdu.mobilesale.mapper.ProductTypeMapper">
+  <resultMap id="BaseResultMap" type="com.sdu.mobilesale.model.ProductType">
+    <id column="product_type_id" jdbcType="INTEGER" property="productTypeId" />
+    <result column="product_type_name" jdbcType="VARCHAR" property="productTypeName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    product_type_id, product_type_name
+  </sql>
+  <select id="getProductType" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from product_type
+  </select>
+
+</mapper>

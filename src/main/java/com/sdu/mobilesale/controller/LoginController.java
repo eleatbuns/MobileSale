@@ -12,7 +12,7 @@ import java.util.Map;
 @RestController
 public class LoginController {
 
-    private static final String RETURNKEY = "result";
+       private static final String RETURNKEY = "result";
     //Successful verification
     private static final int VERIFICATIONSUCCESS = 0;
     //account does not exist

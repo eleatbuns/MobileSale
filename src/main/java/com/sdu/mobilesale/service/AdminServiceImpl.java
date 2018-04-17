@@ -5,7 +5,7 @@ import com.sdu.mobilesale.model.Administrator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service(value = "adminService")
+@Service(value = "AdminService")
 public class AdminServiceImpl implements AdminService {
 
     //Successful verification
