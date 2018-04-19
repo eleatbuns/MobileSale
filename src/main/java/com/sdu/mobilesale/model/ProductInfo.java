@@ -12,9 +12,20 @@ public class ProductInfo {
     private Integer productTypeId;
 
     private Integer productQuantity;
+
     private String productDescription;
 
     private String productImg;
+
+    private Boolean sellingState;
+
+    public Boolean getSellingState() {
+        return sellingState;
+    }
+
+    public void setSellingState(Boolean sellingState) {
+        this.sellingState = sellingState;
+    }
 
     public String getProductDescription() {
         return productDescription;

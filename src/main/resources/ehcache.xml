@@ -5,4 +5,8 @@
            eternal="false"
            maxEntriesLocalHeap="0"
            timeToIdleSeconds="200"/>
+    <cache name="ProductCache"
+           eternal="false"
+           maxEntriesLocalHeap="0"
+           timeToIdleSeconds="200"/>
 </ehcache>

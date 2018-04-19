@@ -18,7 +18,7 @@ c3p0:
     password: 123456
     driverClass: com.mysql.jdbc.Driver
     minPoolSize: 2
-    maxPoolSize: 10
+    maxPoolSize: 30
     maxIdleTime: 1800000
     acquireIncrement: 3
     maxStatements: 1000
