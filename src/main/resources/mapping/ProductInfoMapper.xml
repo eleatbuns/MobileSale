@@ -13,15 +13,15 @@
         <result column="selling_state" jdbcType="BOOLEAN" property="sellingState"/>
     </resultMap>
     <sql id="Base_Column_List">
-        product_id, product_name, product_price, product_cost_price, product_type_id, product_quantity,selling_state
+        product_id, product_name, product_price, product_cost_price, product_type_id, product_quantity, selling_state
     </sql>
     <sql id="Blob_Column_List">
         product_description, product_img
     </sql>
     <!--插入新商品-->
     <insert id="addNewProduct" parameterType="com.sdu.mobilesale.model.ProductInfo">
-        insert into product_info values
-            (#{productId}, #{productName}, #{productPrice}, #{productCostPrice}, #{productTypeId},
+        insert into product_info (product_name, product_price, product_cost_price, product_type_id, product_description, product_quantity, product_img) values
+            (#{productName}, #{productPrice}, #{productCostPrice}, #{productTypeId},
              #{productDescription}, #{productQuantity}, #{productImg})
     </insert>
     <!--查询商品-->
@@ -32,9 +32,41 @@
         <include refid="Blob_Column_List"/>
         from product_info
         <where>
-            <if test="productId != null and productId !='' ">
-                and product_id = #{productId,jdbcType = INTEGER}
+            <if test="productType != null and productType !='' ">
+                and product_type_id = #{productType,jdbcType = INTEGER}
             </if>
         </where>
     </select>
+    <!--更新商品信息-->
+    <update id="updateProduct" parameterType="com.sdu.mobilesale.model.ProductInfo">
+        update product_info
+        set product_id          = #{productId,jdbcType=INTEGER},
+            product_name        = #{productName,jdbcType=VARCHAR},
+            product_price       = #{productPrice,jdbcType=DOUBLE},
+            product_cost_price  = #{productCostPrice,jdbcType=DOUBLE},
+            product_type_id     = #{productTypeId,jdbcType=INTEGER},
+            product_quantity    = #{productQuantity,jdbcType=INTEGER},
+            product_description = #{productDescription,jdbcType=LONGVARCHAR},
+            product_img         = #{productImg,jdbcType = LONGVARCHAR}
+        where product_id = #{productId,jdbcType=INTEGER}
+    </update>
+    <!--下架商品-->
+    <update id="saleOffProduct" parameterType="java.lang.Integer">
+        update product_info
+        set selling_state = 0
+        where product_id = #{productId,jdbcType=INTEGER}
+    </update>
+
+    <!--上架商品-->
+    <update id="saleOnProduct" parameterType="java.lang.Integer">
+        update product_info
+        set selling_state = 1
+        where product_id = #{productId,jdbcType=INTEGER}
+    </update>
+
+    <!--删除商品-->
+    <delete id="deleteProduct" parameterType="java.lang.Integer">
+    delete from product_info
+    where product_id = #{productId,jdbcType=INTEGER}
+    </delete>
 </mapper>

@@ -10,21 +10,18 @@ import org.springframework.stereotype.Service;
 import java.util.HashMap;
 
 @Service(value = "verifyService")
-@CacheConfig(cacheNames = {"SaleCache"})
 public class SellerStaffServiceImpl implements SellerStaffService {
 
     @Autowired
     private SellerStaffMapper sellerStaffMapper;
 
     @Override
-    @Cacheable(key = "#account")
     public String verifyPassword(String account) {
         return sellerStaffMapper.loginAuthentication(account);
     }
 
     @Override
-    @Cacheable(key = "#account")
-    public HashMap getSellerMessage(String account) {
+    public SellerStaff getSellerMessage(String account) {
         return sellerStaffMapper.selectByAccount(account);
     }
 

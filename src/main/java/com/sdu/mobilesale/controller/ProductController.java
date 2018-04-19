@@ -54,10 +54,44 @@ public class ProductController {
         return productInfoService.getProductList(pageNum,type);
     }
 
-    //更新商品
-    @PutMapping(value = "update")
+    /**
+     * 更新商品
+     * @param productInfo
+     * @return
+     */
+    @PostMapping(value = "/update")
     @ResponseBody
     public int updateProduct(ProductInfo productInfo){
         return productInfoService.updateProduct(productInfo);
+    }
+
+    /**
+     * 下架商品
+     * @param productId
+     * @return
+     */
+    @PutMapping(value = "/saleoff/{productId}")
+    public int saleOffProduct(@PathVariable Integer productId){
+        return productInfoService.saleOffProduct(productId);
+    }
+
+    /**
+     * 上架商品
+     * @param productId
+     * @return
+     */
+    @PutMapping(value = "/saleon/{productId}")
+    public int saleOnProduct(@PathVariable Integer productId){
+        return productInfoService.saleOnProduct(productId);
+    }
+
+    /**
+     * 删除商品
+     * @param productId
+     * @return
+     */
+    @DeleteMapping(value = "/delProduct/{productId}")
+    public int deleteProduct(@PathVariable Integer productId){
+        return productInfoService.deleteProduct(productId);
     }
 }

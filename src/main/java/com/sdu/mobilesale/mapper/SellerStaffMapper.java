@@ -16,7 +16,7 @@ public interface SellerStaffMapper {
 
     int insertSelective(SellerStaff record);
 
-    HashMap selectByAccount(@Param("useraccount")String useraccount);
+    SellerStaff selectByAccount(@Param("useraccount")String useraccount);
     String loginAuthentication(@Param("useraccount")String useraccount);
 
     int updateByPrimaryKeySelective(SellerStaff record);

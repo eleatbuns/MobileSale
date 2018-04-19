@@ -6,12 +6,14 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @SpringBootApplication
 @MapperScan("com.sdu.mobilesale.mapper")
 @ComponentScan(basePackages = {"com.sdu.mobilesale.*"})
 @EnableAutoConfiguration
 @EnableCaching
+@EnableTransactionManagement
 public class MobilesaleApplication {
 
 	public static void main(String[] args) {

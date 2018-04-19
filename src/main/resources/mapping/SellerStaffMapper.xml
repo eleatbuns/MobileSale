@@ -9,18 +9,18 @@
         <result column="seller_phone" jdbcType="VARCHAR" property="sellerPhone"/>
         <result column="area_id" jdbcType="VARCHAR" property="areaId"/>
     </resultMap>
-    <resultMap id="PartResultMap" type="java.util.HashMap">
+    <resultMap id="PartResultMap" type="com.sdu.mobilesale.model.SellerStaff">
         <result column="seller_name" jdbcType="VARCHAR" property="sellerName"/>
         <result column="seller_phone" jdbcType="VARCHAR" property="sellerPhone"/>
-        <collection property="areas" ofType="com.sdu.mobilesale.model.Areas">
+        <association property="areas" javaType="com.sdu.mobilesale.model.Areas">
             <id property="id" column="id"/>
             <result property="area" column="area"/>
             <result property="areaId" column="area_id"/>
-        </collection>
-        <collection property="cities" ofType="com.sdu.mobilesale.model.Cities">
+        </association>
+        <association property="cities" javaType="com.sdu.mobilesale.model.Cities">
             <id property="cityId" column="city_id"/>
             <result property="city" column="city"/>
-        </collection>
+        </association>
         <!--<collection property="customer_info" ofType="com.sdu.mobilesale.model.CustomerInformation">-->
             <!--<id property="customerId" column="customer_id"/>-->
             <!--<result property="customerName" column="customer_name"/>-->

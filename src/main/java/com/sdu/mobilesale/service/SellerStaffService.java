@@ -6,6 +6,6 @@ import java.util.HashMap;
 
 public interface SellerStaffService {
     String verifyPassword(String account);
-    HashMap getSellerMessage(String account);
+    SellerStaff getSellerMessage(String account);
     int updateSellerMessage(SellerStaff sellerStaff);
 }

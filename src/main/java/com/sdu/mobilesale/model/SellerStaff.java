@@ -13,6 +13,26 @@ public class SellerStaff {
 
     private String areaId;
 
+    public Cities getCities() {
+        return cities;
+    }
+
+    public void setCities(Cities cities) {
+        this.cities = cities;
+    }
+
+    private Cities cities;
+
+    public Areas getAreas() {
+        return areas;
+    }
+
+    public void setAreas(Areas areas) {
+        this.areas = areas;
+    }
+
+    private Areas areas;
+
     public Integer getSellerId() {
         return sellerId;
     }
